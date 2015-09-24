@@ -8,9 +8,9 @@ if ! File.exists?( File.join(File.dirname(__FILE__), 'resources/NDP452-KB2901907
   exit 1
 end
 
-if ! File.exists?( File.join(File.dirname(__FILE__), 'resources/SQLEXPR_x64_ENU.exe') )
+if ! File.exists?( File.join(File.dirname(__FILE__), 'resources/SQLEXPRWT_x64_ENU.exe') )
   puts 'SQL Server 2014 Express could not be found!'
-  #puts "Please run:\n  wget http://download.microsoft.com/download/E/2/1/E21644B5-2DF2-47C2-91BD-63C560427900/NDP452-KB2901907-x86-x64-AllOS-ENU.exe"
+  puts "Please run:\n  wget http://download.microsoft.com/download/E/2/1/E21644B5-2DF2-47C2-91BD-63C560427900/NDP452-KB2901907-x86-x64-AllOS-ENU.exe"
   exit 1
 end
 
@@ -22,8 +22,7 @@ end
 
 Vagrant.configure(2) do |config|
 
-  #config.vm.box = "opentable/win-2012r2-standard-amd64-nocm"
-  config.vm.box = "opentable/win-2008r2-standard-amd64-nocm"
+  config.vm.box = "ferventcoder/win2008r2-x64-nocm"
   config.vm.guest = :windows
   config.vm.communicator = "winrm"
 
@@ -44,11 +43,11 @@ Vagrant.configure(2) do |config|
 
   # IIS
   config.vm.provision :shell, path: "scripts/install-iis.cmd"
-  config.vm.provision :shell, path: "scripts/delete-default-iis-website.ps1"
+  #config.vm.provision :shell, path: "scripts/delete-default-iis-website.ps1"
 
   # Sitefinity
-  config.vm.provision :shell, path: "scripts/install-sitefinity.ps1"
-  config.vm.provision :shell, path: "scripts/configure-sitefinity.ps1"
+  #config.vm.provision :shell, path: "scripts/install-sitefinity.ps1"
+  #config.vm.provision :shell, path: "scripts/configure-sitefinity.ps1"
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine

@@ -1,10 +1,10 @@
 Vagrantfile for testing Sitefinity on Windows
 =============================
 
-*This project is currently broken. Provisioning completes, but portions of code to automate Sitefinity installation and permissions have not been completed. Contributions welcome.*
+**_This project is currently broken. Provisioning completes, but portions of code to automate Sitefinity installation and permissions have not been completed. Contributions welcome._**
 
 ##Credits
-Heavily inspired by ([Kevin Wilson](http://kwilson.me.uk/blog/provisioning-a-windows-server-vagrant-box-with-iis-net-4-5-and-octopus-deploy/)) and ([Dmitry Zaets' Windows VagrantFile](https://github.com/dmitry-zaets/vagrantfile-windows-iis-mssql))
+Heavily inspired by [Kevin Wilson](http://kwilson.me.uk/blog/provisioning-a-windows-server-vagrant-box-with-iis-net-4-5-and-octopus-deploy/) and [Dmitry Zaets' Windows VagrantFile](https://github.com/dmitry-zaets/vagrantfile-windows-iis-mssql)
 
 This repository contains a Windows box ([Windows 2008 R2 x64 with Service Pack 1](https://vagrantcloud.com/ferventcoder/boxes/win2008r2-x64-nocm)) and a configured installation of Sitefinity.
 

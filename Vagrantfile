@@ -33,17 +33,17 @@ Vagrant.configure(2) do |config|
   config.vm.network :forwarded_port, guest: 3389, host: 1234
   config.vm.network :forwarded_port, guest: 5985, host: 5985, id: "winrm", auto_correct: true
 
+  # IIS
+  config.vm.provision :shell, path: "scripts/install-iis.cmd"
+  #config.vm.provision :shell, path: "scripts/delete-default-iis-website.ps1"
+
   # .NET 4.5
-  config.vm.provision :shell, path: "scripts/install-dot-net.ps1"
   config.vm.provision :shell, path: "scripts/install-dot-net-45.cmd"
+  config.vm.provision :shell, path: "scripts/configure-dot-net.ps1"
 
   # Database
   config.vm.provision :shell, path: "scripts/install-sql-server.cmd"
   config.vm.provision :shell, path: "scripts/configure-sql-server.ps1"
-
-  # IIS
-  config.vm.provision :shell, path: "scripts/install-iis.cmd"
-  #config.vm.provision :shell, path: "scripts/delete-default-iis-website.ps1"
 
   # Sitefinity
   #config.vm.provision :shell, path: "scripts/install-sitefinity.ps1"
